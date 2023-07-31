@@ -1,0 +1,55 @@
+{
+    "clothingData": [
+        {
+            "id" : 0,
+            "name" : "Venture Shirt",
+            "image" : "https://i.pinimg.com/564x/4f/72/ac/4f72ac59777b9484059d37565fefbb60.jpg",
+            "price" : 340
+        },
+        {
+            "id" : 1,
+            "name" : "Winter Hood",
+            "image" : "https://i.pinimg.com/564x/7c/53/31/7c5331bc708ebca401f782bdb7453ebd.jpg",
+            "price" : 720
+        },
+        {
+            "id" : 2,
+            "name" : "Night Party Hood",
+            "image" : "https://i.pinimg.com/564x/86/2c/aa/862caa6b46185d87bfd759d6f3ba08e9.jpg",
+            "price" : 500
+        },{
+            "id" : 3,
+            "name" : "Military Hood",
+            "image" : "https://i.pinimg.com/564x/53/ea/42/53ea42020f3f7befba409e48b031ed26.jpg",
+            "price" : 440
+        },
+        {
+            "id" : 4,
+            "name" : "Sport Hood",
+            "image" : "https://i.pinimg.com/736x/2e/03/e7/2e03e7ee81b6be7a5812fb9d470665da.jpg",
+            "price" : 240
+        },{
+            "id" : 5,
+            "name" : "Ladies Swag",
+            "image" : "https://i.pinimg.com/564x/fb/89/48/fb8948d52cbed8582dd970a4a749a884.jpg",
+            "price" : 540
+        },
+        {
+            "id" : 6,
+            "name" : "Hit man Blaze",
+            "image" : "https://i.pinimg.com/564x/59/f8/5c/59f85c61ce188d998f22ade9b498fba5.jpg",
+            "price" : 370
+        },
+        {
+            "id" : 7,
+            "name" : "Strim Down",
+            "image" : "https://i.pinimg.com/564x/53/46/1f/53461f6ffb5d435cc146fc5df9a2bfcc.jpg",
+            "price" : 340
+        },{
+            "id" : 8,
+            "name" : "Full Moon",
+            "image" : "https://i.pinimg.com/736x/1c/52/41/1c524196073a03b10d675bc21f8dd494.jpg",
+            "price" : 340
+        }
+    ]
+}
