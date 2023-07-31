@@ -84,7 +84,9 @@ class ClothingStore {
   }
 
   updateCart() {
-  
+    this.cartItems.innerHTML = '';
+    let totalPrice = 0;
+
   }
 
 
