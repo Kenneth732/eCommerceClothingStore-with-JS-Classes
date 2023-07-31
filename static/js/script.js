@@ -44,6 +44,15 @@ class ClothingStore {
       this.renderClothingItem(item);
     });
   }
+
+  renderClothingItem(item) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+
+  }
+
+
 }
 
 const clothingStore = new ClothingStore();
