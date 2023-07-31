@@ -12,6 +12,15 @@ class ClothingStore {
     this.increaseQuantity = this.increaseQuantity.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
 
+    // Fetch clothing data from JSON and render it on the webpage
+    fetch('db.json')
+      .then((res) => res.json())
+      .then((data) => {
+        this.data = data;
+        this.renderClothingItems();
+      })
+      .catch((error) => console.error('Error fetching data:', error));
+
  
   }
 
