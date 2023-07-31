@@ -6,6 +6,13 @@ class ClothingStore {
     this.cartIcon = document.getElementById('cartIcon');
     this.cart = [];
 
+    // Bind class methods as event handlers with explicit binding
+    this.addToCart = this.addToCart.bind(this);
+    this.decreaseQuantity = this.decreaseQuantity.bind(this);
+    this.increaseQuantity = this.increaseQuantity.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
+
+ 
   }
 
 }
