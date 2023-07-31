@@ -83,7 +83,9 @@ class ClothingStore {
     this.updateCart();
   }
 
-
+  updateCart() {
+  
+  }
 
 
 }
