@@ -87,6 +87,38 @@ class ClothingStore {
     this.cartItems.innerHTML = '';
     let totalPrice = 0;
 
+    this.cart.forEach((item) => {
+      const cartItemElement = document.createElement('li');
+      cartItemElement.classList.add('cartItem');
+
+      cartItemElement.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <span>${item.name}</span>
+        <button class="quantityBtn decrease" data-id="${item.id}">-</button>
+        <span>${item.quantity}</span>
+        <button class="quantityBtn increase" data-id="${item.id}">+</button>
+        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        <button class="removeBtn" data-id="${item.id}">Remove</button>
+      `;
+
+
+      });
+
+      increaseBtn.addEventListener('click', () => {
+        this.increaseQuantity(item);
+      });
+
+      removeBtn.addEventListener('click', () => {
+        this.removeFromCart(item);
+      });
+
+      this.cartItems.appendChild(cartItemElement);
+      totalPrice += item.price * item.quantity;
+    });
+
+    this.totalPrice = totalPrice; // Use the setter to update totalPrice
+    document.getElementById('cartItemCount').textContent = this.cartItemsCount; // Use the getter for cartItemsCount
+  
   }
 
 
