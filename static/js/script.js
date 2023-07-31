@@ -21,7 +21,10 @@ class ClothingStore {
       })
       .catch((error) => console.error('Error fetching data:', error));
 
- 
+    this.cartIcon.addEventListener('click', () => {
+      const cartDiv = document.getElementById('cart');
+      cartDiv.classList.add('active');
+    });
   }
 
 }
