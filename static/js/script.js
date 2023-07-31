@@ -63,6 +63,12 @@ class ClothingStore {
       <button class="addToCartBtn" data-id="${item.id}">Add to Cart</button>
     `;
 
+    const addToCartBtn = card.querySelector('.addToCartBtn');
+    addToCartBtn.addEventListener('click', () => {
+      this.addToCart(item);
+    });
+
+    this.clothingList.appendChild(card);
   }
 
 
