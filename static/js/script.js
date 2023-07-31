@@ -49,6 +49,12 @@ class ClothingStore {
     const card = document.createElement('div');
     card.classList.add('card');
 
+    let imageContainer;
+    if (typeof item['image'] === 'string') {
+      imageContainer = `<img src="${item['image']}" alt="Product Image"></img>`;
+    } else {
+      imageContainer = `<img src="${item['image']['url']}" alt="${item['image']['alt']}"></img>`;
+    }
 
   }
 
