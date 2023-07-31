@@ -123,9 +123,12 @@ class ClothingStore {
 
     this.totalPrice = totalPrice; // Use the setter to update totalPrice
     document.getElementById('cartItemCount').textContent = this.cartItemsCount; // Use the getter for cartItemsCount
-  
   }
 
+  decreaseQuantity(item) {
+    item.quantity = Math.max(0, item.quantity - 1);
+    this.updateCart();
+  }
 
 }
 
