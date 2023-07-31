@@ -27,6 +27,18 @@ class ClothingStore {
     });
   }
 
+  get cartItemsCount() {
+    return this.cart.reduce((acc, item) => acc + item.quantity, 0);
+  }
+
+  /**
+   * @param {number} value
+   */
+  set totalPrice(value) {
+    // You can add validation here if needed
+    this._totalPriceElement.textContent = value.toFixed(2);
+  }
+
 }
 
 const clothingStore = new ClothingStore();
