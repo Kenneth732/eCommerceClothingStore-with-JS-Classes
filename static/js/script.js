@@ -39,6 +39,11 @@ class ClothingStore {
     this._totalPriceElement.textContent = value.toFixed(2);
   }
 
+  renderClothingItems() {
+    this.data.clothingData.forEach((item) => {
+      this.renderClothingItem(item);
+    });
+  }
 }
 
 const clothingStore = new ClothingStore();
