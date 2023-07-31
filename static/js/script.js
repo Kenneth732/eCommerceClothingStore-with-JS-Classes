@@ -101,7 +101,12 @@ class ClothingStore {
         <button class="removeBtn" data-id="${item.id}">Remove</button>
       `;
 
+      const decreaseBtn = cartItemElement.querySelector('.decrease');
+      const increaseBtn = cartItemElement.querySelector('.increase');
+      const removeBtn = cartItemElement.querySelector('.removeBtn');
 
+      decreaseBtn.addEventListener('click', () => {
+        this.decreaseQuantity(item);
       });
 
       increaseBtn.addEventListener('click', () => {
