@@ -71,6 +71,20 @@ class ClothingStore {
     this.clothingList.appendChild(card);
   }
 
+  addToCart(item) {
+    const existingItem = this.cart.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      this.cart.push({ ...item, quantity: 1 });
+    }
+
+    this.updateCart();
+  }
+
+
+
 
 }
 
