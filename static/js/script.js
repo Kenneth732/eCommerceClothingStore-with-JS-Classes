@@ -135,6 +135,13 @@ class ClothingStore {
     this.updateCart();
   }
 
+  removeFromCart(item) {
+    const index = this.cart.findIndex((cartItem) => cartItem.id === item.id);
+    if (index !== -1) {
+      this.cart.splice(index, 1);
+    }
+    this.updateCart();
+  }
 }
 
 const clothingStore = new ClothingStore();
