@@ -130,6 +130,11 @@ class ClothingStore {
     this.updateCart();
   }
 
+  increaseQuantity(item) {
+    item.quantity++;
+    this.updateCart();
+  }
+
 }
 
 const clothingStore = new ClothingStore();
