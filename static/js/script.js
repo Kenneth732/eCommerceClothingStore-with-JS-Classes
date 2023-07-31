@@ -56,6 +56,13 @@ class ClothingStore {
       imageContainer = `<img src="${item['image']['url']}" alt="${item['image']['alt']}"></img>`;
     }
 
+    card.innerHTML = `
+      ${imageContainer}
+      <h3>${item.name}</h3>
+      <p>Price: $${item.price}</p>
+      <button class="addToCartBtn" data-id="${item.id}">Add to Cart</button>
+    `;
+
   }
 
 
