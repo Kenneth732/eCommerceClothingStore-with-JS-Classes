@@ -27,60 +27,71 @@ class ClothingStore {
     });
   }
 
+  /** 
+   * Getter for the cart items count.
+   * @returns {number} The total count of items in the cart.
+   */
   get cartItemsCount() {
     return this.cart.reduce((acc, item) => acc + item.quantity, 0);
   }
 
-  /**
-   * @param {number} value
+  /** 
+   * Setter for the total price.
+   * @param {number} value - The new total price value.
    */
   set totalPrice(value) {
-    // You can add validation here if needed
     this._totalPriceElement.textContent = value.toFixed(2);
   }
-
   renderClothingItems() {
     this.data.clothingData.forEach((item) => {
       this.renderClothingItem(item);
     });
   }
 
-  renderClothingItem(item) {
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    let imageContainer;
-    if (typeof item['image'] === 'string') {
-      imageContainer = `<img src="${item['image']}" alt="Product Image"></img>`;
-    } else {
-      imageContainer = `<img src="${item['image']['url']}" alt="${item['image']['alt']}"></img>`;
+  async renderClothingItem(item) {
+    try {
+      const card = document.createElement('div');
+      card.classList.add('card');
+  
+      let imageContainer;
+      if (typeof item['image'] === 'string') {
+        imageContainer = `<img src="${item['image']}" alt="Product Image"></img>`;
+      } else {
+        imageContainer = `<img src="${item['image']['url']}" alt="${item['image']['alt']}"></img>`;
+      }
+  
+      card.innerHTML = `
+        ${imageContainer}
+        <h3>${item.name}</h3>
+        <p>Price: $${item.price}</p>
+        <button class="addToCartBtn" data-id="${item.id}">Add to Cart</button>
+      `;
+  
+      const addToCartBtn = card.querySelector('.addToCartBtn');
+      addToCartBtn.addEventListener('click', () => {
+        this.addToCart(item);
+      });
+  
+      this.clothingList.appendChild(card);
+    } catch(error) {
+      console.error(`Error occured when trying to display`, error)
     }
-
-    card.innerHTML = `
-      ${imageContainer}
-      <h3>${item.name}</h3>
-      <p>Price: $${item.price}</p>
-      <button class="addToCartBtn" data-id="${item.id}">Add to Cart</button>
-    `;
-
-    const addToCartBtn = card.querySelector('.addToCartBtn');
-    addToCartBtn.addEventListener('click', () => {
-      this.addToCart(item);
-    });
-
-    this.clothingList.appendChild(card);
   }
 
-  addToCart(item) {
-    const existingItem = this.cart.find((cartItem) => cartItem.id === item.id);
+  async addToCart(item) {
+    try {
+      const existingItem = this.cart.find((cartItem) => cartItem.id === item.id);
 
-    if (existingItem) {
-      existingItem.quantity++;
-    } else {
-      this.cart.push({ ...item, quantity: 1 });
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        this.cart.push({ ...item, quantity: 1 });
+      }
+  
+      this.updateCart();
+    } catch(error) {
+      console.error(`Error while adding item to cart`, error)
     }
-
-    this.updateCart();
   }
 
   updateCart() {
@@ -145,3 +156,5 @@ class ClothingStore {
 }
 
 const clothingStore = new ClothingStore();
+
+
